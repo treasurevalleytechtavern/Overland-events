@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Events | Overland Bar</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="../../events.css">
+  </head>
+  <body>
+    <main class="events-shell admin-shell">
+      <section class="events-hero admin-hero" aria-labelledby="admin-events-title">
+        <a class="events-logo-link" href="../../index.html" aria-label="View public events">
+          <img class="events-logo" src="../../../assets/overland-bar-logo.png" alt="Overland Bar">
+        </a>
+        <div>
+          <p class="eyebrow">Overland Bar</p>
+          <h1 id="admin-events-title">Events admin.</h1>
+          <p class="helper-copy">Add the regular lineup, special nights, and anything guests should know about.</p>
+        </div>
+      </section>
+
+      <section class="admin-panel" id="event-form-panel" aria-label="Event form"></section>
+      <section class="admin-panel" id="event-json-panel" aria-label="Event JSON import and export"></section>
+      <section class="admin-panel" id="event-list-panel" aria-label="Existing events"></section>
+    </main>
+
+    <script type="module" src="./adminEvents.js"></script>
+  </body>
+</html>
