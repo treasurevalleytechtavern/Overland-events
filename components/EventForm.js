@@ -134,6 +134,26 @@ export function createEventForm(root, onSave) {
           </div>
           <div class="form-grid two-column">
             <label class="form-field">
+              <span>Weeknight hook (Sun-Thu)</span>
+              <input name="weeknightHook" type="text" value="${textValue(event, "weeknightHook")}" placeholder="Weeknights = more turns">
+            </label>
+            <label class="form-field">
+              <span>Weeknight CTA (Sun-Thu)</span>
+              <input name="weeknightCallToAction" type="text" value="${textValue(event, "weeknightCallToAction")}" placeholder="Come sing before the weekend rush">
+            </label>
+          </div>
+          <div class="form-grid two-column">
+            <label class="form-field">
+              <span>Weekend hook (Fri-Sat)</span>
+              <input name="weekendHook" type="text" value="${textValue(event, "weekendHook")}" placeholder="Weekends = bigger crowd">
+            </label>
+            <label class="form-field">
+              <span>Weekend CTA (Fri-Sat)</span>
+              <input name="weekendCallToAction" type="text" value="${textValue(event, "weekendCallToAction")}" placeholder="Arrive early and grab a spot">
+            </label>
+          </div>
+          <div class="form-grid two-column">
+            <label class="form-field">
               <span>Specials / deals</span>
               <input name="specialsDeals" type="text" value="${textValue(event, "specialsDeals")}" placeholder="Drink specials, food deals, prizes">
             </label>
@@ -285,6 +305,10 @@ export function createEventForm(root, onSave) {
       shortDescription: formData.get("shortDescription").trim(),
       vibe: formData.get("vibe"),
       highlightHook: formData.get("highlightHook").trim(),
+      weeknightHook: formData.get("weeknightHook").trim(),
+      weeknightCallToAction: formData.get("weeknightCallToAction").trim(),
+      weekendHook: formData.get("weekendHook").trim(),
+      weekendCallToAction: formData.get("weekendCallToAction").trim(),
       specialsDeals: formData.get("specialsDeals").trim(),
       callToAction: formData.get("callToAction").trim(),
       location: formData.get("location"),
