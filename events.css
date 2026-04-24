@@ -222,7 +222,7 @@ h3 {
   width: 128px;
   min-width: 128px;
   aspect-ratio: 1 / 1;
-  margin: 0 0 10px 14px;
+  margin: 0 0 12px 18px;
   overflow: hidden;
   border: 1px solid rgba(255, 209, 42, 0.32);
   border-radius: 8px;
@@ -230,9 +230,16 @@ h3 {
 }
 
 .event-card-copy {
-  display: grid;
-  gap: 10px;
+  display: flow-root;
   padding: 16px;
+}
+
+.event-card-copy > * + * {
+  margin-top: 10px;
+}
+
+.event-card-copy > .event-vibe-video + * {
+  margin-top: 0;
 }
 
 .event-card-topline,
@@ -616,7 +623,7 @@ textarea:focus {
   .event-vibe-video {
     width: 96px;
     min-width: 96px;
-    margin-left: 10px;
+    margin-left: 12px;
   }
 
   .events-section-heading,
