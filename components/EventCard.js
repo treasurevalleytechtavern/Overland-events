@@ -57,6 +57,13 @@ function startsAfterEightPm(event) {
 }
 
 function getVibeVideo(event, occurrenceDate) {
+  if (String(event.eventName || "").toLowerCase().includes("happy hour")) {
+    return {
+      src: "./assets/happy-hour-vibes.mp4",
+      label: "Happy Hour vibes"
+    };
+  }
+
   if (!startsAfterEightPm(event)) {
     return null;
   }
