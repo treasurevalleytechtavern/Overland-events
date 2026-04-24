@@ -218,9 +218,11 @@ h3 {
 }
 
 .event-vibe-video {
+  float: right;
   width: 128px;
   min-width: 128px;
   aspect-ratio: 1 / 1;
+  margin: 0 0 10px 14px;
   overflow: hidden;
   border: 1px solid rgba(255, 209, 42, 0.32);
   border-radius: 8px;
@@ -234,22 +236,11 @@ h3 {
 }
 
 .event-card-topline,
-.badge-row,
-.event-title-row {
+.badge-row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
-}
-
-.event-title-row {
-  justify-content: space-between;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-.event-title-copy {
-  min-width: 0;
 }
 
 .event-date,
@@ -622,14 +613,10 @@ textarea:focus {
     font-size: 1.08rem;
   }
 
-  .event-title-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 96px;
-  }
-
   .event-vibe-video {
     width: 96px;
     min-width: 96px;
+    margin-left: 10px;
   }
 
   .events-section-heading,
