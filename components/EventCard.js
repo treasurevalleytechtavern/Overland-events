@@ -81,15 +81,19 @@ export function renderEventCard(event, variant = "upcoming") {
   return `
     <article class="event-card ${event.featuredEvent ? "is-featured" : ""}">
       ${imageMarkup}
-      ${vibeVideoMarkup}
       <div class="event-card-copy">
         <div class="event-card-topline">
           ${event.featuredEvent ? `<span class="status-badge featured">Featured</span>` : ""}
           ${event.vibe ? `<span class="vibe-tag">${escapeHtml(event.vibe)}</span>` : ""}
         </div>
-        <h3>${escapeHtml(event.eventName)}</h3>
-        ${dateMarkup}
-        <p class="event-time">${escapeHtml(formatTimeRange(event))}</p>
+        <div class="event-title-row">
+          <div class="event-title-copy">
+            <h3>${escapeHtml(event.eventName)}</h3>
+            ${dateMarkup}
+            <p class="event-time">${escapeHtml(formatTimeRange(event))}</p>
+          </div>
+          ${vibeVideoMarkup}
+        </div>
         <p class="event-description">${escapeHtml(event.shortDescription)}</p>
         ${contextualCopy.hook ? `<p class="event-hook">${escapeHtml(contextualCopy.hook)}</p>` : ""}
         ${detailLine("Specials", event.specialsDeals)}
