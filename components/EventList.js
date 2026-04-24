@@ -43,9 +43,12 @@ function sortAdminEvents(events) {
 export function createEventList(root, { onEdit, onDelete }) {
   let events = [];
   let activeFilter = "All";
+  let visibleCount = 5;
 
   function render() {
     const visibleEvents = sortAdminEvents(getFilteredEvents(events, activeFilter));
+    const renderedEvents = visibleEvents.slice(0, visibleCount);
+    const hasMoreEvents = visibleEvents.length > visibleCount;
 
     root.innerHTML = `
       <div class="events-section-heading compact-heading">
@@ -63,16 +66,28 @@ export function createEventList(root, { onEdit, onDelete }) {
       </div>
 
       <div class="admin-event-list">
-        ${visibleEvents.length ? visibleEvents.map(renderEventItem).join("") : `<p class="empty-state">No ${activeFilter.toLowerCase()} events yet.</p>`}
+        ${renderedEvents.length ? renderedEvents.map(renderEventItem).join("") : `<p class="empty-state">No ${activeFilter.toLowerCase()} events yet.</p>`}
       </div>
+
+      ${hasMoreEvents ? `<button class="load-more-button" type="button" data-action="view-more-events">View more</button>` : ""}
     `;
 
     root.querySelectorAll("[data-filter]").forEach((button) => {
       button.addEventListener("click", () => {
         activeFilter = button.dataset.filter;
+        visibleCount = 5;
         render();
       });
     });
+
+    const viewMoreButton = root.querySelector("[data-action='view-more-events']");
+
+    if (viewMoreButton) {
+      viewMoreButton.addEventListener("click", () => {
+        visibleCount += 5;
+        render();
+      });
+    }
 
     root.querySelectorAll("[data-action='edit']").forEach((button) => {
       button.addEventListener("click", () => {
@@ -119,6 +134,7 @@ export function createEventList(root, { onEdit, onDelete }) {
 
   function setEvents(nextEvents) {
     events = nextEvents;
+    visibleCount = Math.min(Math.max(visibleCount, 5), Math.max(events.length, 5));
     render();
   }
 

@@ -95,7 +95,7 @@ a:hover {
   border-bottom: 1px solid var(--line);
   background:
     linear-gradient(90deg, rgba(5, 5, 5, 0.94), rgba(5, 5, 5, 0.78)),
-    url("../assets/good-times-karaoke.jpg") right 7vw center / 250px auto no-repeat;
+    url("./assets/good-times-karaoke.jpg") right 7vw center / 250px auto no-repeat;
 }
 
 .admin-hero {
@@ -462,7 +462,8 @@ textarea:focus {
 }
 
 .quiet-button,
-.filter-button {
+.filter-button,
+.load-more-button {
   border-color: rgba(49, 232, 255, 0.48);
   background: rgba(49, 232, 255, 0.08);
   box-shadow: none;
@@ -470,8 +471,14 @@ textarea:focus {
 
 .quiet-button:hover,
 .filter-button:hover,
-.filter-button.is-active {
+.filter-button.is-active,
+.load-more-button:hover {
   background: rgba(49, 232, 255, 0.18);
+}
+
+.load-more-button {
+  width: fit-content;
+  margin-top: 14px;
 }
 
 .danger-button {
@@ -550,7 +557,7 @@ textarea:focus {
     padding-top: 24px;
     background:
       linear-gradient(180deg, rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.96)),
-      url("../assets/good-times-karaoke.jpg") right 18px top 18px / 112px auto no-repeat;
+      url("./assets/good-times-karaoke.jpg") right 18px top 18px / 112px auto no-repeat;
   }
 
   .events-logo {
@@ -594,7 +601,8 @@ textarea:focus {
   .json-actions,
   .form-actions button,
   .json-actions button,
-  .admin-event-actions button {
+  .admin-event-actions button,
+  .load-more-button {
     width: 100%;
   }
 

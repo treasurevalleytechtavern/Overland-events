@@ -8,6 +8,19 @@ export function createEventsWidget(root) {
   function render() {
     const dailyEvents = filterDailyEvents(events);
     const upcomingEvents = filterUpcomingEvents(events);
+    const upcomingMarkup = upcomingEvents.length ? `
+        <section class="event-group" aria-labelledby="upcoming-events-title">
+          <div class="events-section-heading compact-heading">
+            <div>
+              <p class="eyebrow">Upcoming Events</p>
+              <h3 id="upcoming-events-title">Coming up</h3>
+            </div>
+          </div>
+          <div class="event-card-grid">
+            ${upcomingEvents.map((event) => renderEventCard(event, "upcoming")).join("")}
+          </div>
+        </section>
+    ` : "";
 
     root.innerHTML = `
       <section class="events-widget" aria-labelledby="events-widget-title">
@@ -30,17 +43,7 @@ export function createEventsWidget(root) {
           </div>
         </section>
 
-        <section class="event-group" aria-labelledby="upcoming-events-title">
-          <div class="events-section-heading compact-heading">
-            <div>
-              <p class="eyebrow">Upcoming Events</p>
-              <h3 id="upcoming-events-title">Coming up</h3>
-            </div>
-          </div>
-          <div class="event-card-grid">
-            ${upcomingEvents.length ? upcomingEvents.map((event) => renderEventCard(event, "upcoming")).join("") : `<p class="empty-state">No upcoming events yet&mdash;stay tuned.</p>`}
-          </div>
-        </section>
+        ${upcomingMarkup}
 
         <p class="tiktok-note">
           You might see someone filming around the bar for
