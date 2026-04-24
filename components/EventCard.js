@@ -11,7 +11,20 @@ function escapeHtml(value) {
 }
 
 function detailLine(label, value) {
-  return value ? `<p class="event-detail"><strong>${label}:</strong> ${escapeHtml(value)}</p>` : "";
+  return value ? `<p class="event-detail"><strong>${label}:</strong> ${formatTextWithLinks(value)}</p>` : "";
+}
+
+function formatTextWithLinks(value) {
+  const urlPattern = /((?:https?:\/\/|www\.)[^\s<]+|(?:[a-z0-9-]+\.)+[a-z]{2,}(?:\/[^\s<]*)?)/gi;
+  return escapeHtml(value).replace(urlPattern, (match) => {
+    const cleanMatch = match.replace(/[.,!?;:)]+$/, "");
+    const trailing = match.slice(cleanMatch.length);
+    const href = cleanMatch.startsWith("http://") || cleanMatch.startsWith("https://")
+      ? cleanMatch
+      : `https://${cleanMatch}`;
+
+    return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${cleanMatch}</a>${trailing}`;
+  });
 }
 
 function parseDate(value) {
@@ -86,20 +99,16 @@ export function renderEventCard(event, variant = "upcoming") {
           ${event.featuredEvent ? `<span class="status-badge featured">Featured</span>` : ""}
           ${event.vibe ? `<span class="vibe-tag">${escapeHtml(event.vibe)}</span>` : ""}
         </div>
-        <div class="event-title-row">
-          <div class="event-title-copy">
-            <h3>${escapeHtml(event.eventName)}</h3>
-            ${dateMarkup}
-            <p class="event-time">${escapeHtml(formatTimeRange(event))}</p>
-          </div>
-          ${vibeVideoMarkup}
-        </div>
-        <p class="event-description">${escapeHtml(event.shortDescription)}</p>
-        ${contextualCopy.hook ? `<p class="event-hook">${escapeHtml(contextualCopy.hook)}</p>` : ""}
+        ${vibeVideoMarkup}
+        <h3>${escapeHtml(event.eventName)}</h3>
+        ${dateMarkup}
+        <p class="event-time">${escapeHtml(formatTimeRange(event))}</p>
+        <p class="event-description">${formatTextWithLinks(event.shortDescription)}</p>
+        ${contextualCopy.hook ? `<p class="event-hook">${formatTextWithLinks(contextualCopy.hook)}</p>` : ""}
         ${detailLine("Specials", event.specialsDeals)}
         ${detailLine("Location", event.location)}
         ${signupMarkup}
-        ${contextualCopy.callToAction ? `<p class="event-action">${escapeHtml(contextualCopy.callToAction)}</p>` : ""}
+        ${contextualCopy.callToAction ? `<p class="event-action">${formatTextWithLinks(contextualCopy.callToAction)}</p>` : ""}
       </div>
     </article>
   `;
