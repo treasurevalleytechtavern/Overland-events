@@ -306,7 +306,8 @@ h3 {
 }
 
 .status-badge,
-.vibe-tag {
+.vibe-tag,
+.countdown-tag {
   display: inline-flex;
   align-items: center;
   min-height: 26px;
@@ -344,6 +345,12 @@ h3 {
 .vibe-tag {
   border-color: rgba(255, 70, 98, 0.5);
   background: rgba(255, 70, 98, 0.08);
+}
+
+.countdown-tag {
+  border-color: rgba(255, 209, 42, 0.72);
+  background: rgba(255, 209, 42, 0.12);
+  color: var(--gold);
 }
 
 .empty-state {

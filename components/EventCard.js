@@ -59,7 +59,7 @@ function startsAfterEightPm(event) {
 function getVibeVideo(event, occurrenceDate) {
   if (String(event.eventName || "").toLowerCase().includes("happy hour")) {
     return {
-      src: "./assets/happy-hour-vibes.mp4",
+      src: "./assets/happy-hour-vibes.mp4?v=20260424-3",
       label: "Happy Hour vibes"
     };
   }
@@ -73,9 +73,31 @@ function getVibeVideo(event, occurrenceDate) {
   const isWeekend = day === 5 || day === 6;
 
   return {
-    src: isWeekend ? "./assets/weekend-vibes.mp4" : "./assets/weeknight-vibes.mp4",
+    src: isWeekend ? "./assets/weekend-vibes.mp4?v=20260424-1" : "./assets/weeknight-vibes.mp4?v=20260424-1",
     label: isWeekend ? "Weekend vibes" : "Weeknight vibes"
   };
+}
+
+function getDaysUntilText(dateValue) {
+  const occurrenceDate = parseDate(dateValue);
+
+  if (!occurrenceDate) {
+    return "";
+  }
+
+  const today = new Date();
+  const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const dayDifference = Math.round((occurrenceDate - startOfToday) / 86400000);
+
+  if (dayDifference === 0) {
+    return "Tonight";
+  }
+
+  if (dayDifference === 1) {
+    return "Tomorrow";
+  }
+
+  return `In ${dayDifference} days`;
 }
 
 export function renderEventCard(event, variant = "upcoming") {
@@ -83,6 +105,7 @@ export function renderEventCard(event, variant = "upcoming") {
   const displayOccurrence = nextOccurrence || new Date().toISOString().slice(0, 10);
   const contextualCopy = getContextualCopy(event, displayOccurrence);
   const vibeVideo = getVibeVideo(event, displayOccurrence);
+  const countdownText = variant === "upcoming" ? getDaysUntilText(nextOccurrence) : "";
   const dateMarkup = nextOccurrence ? `<p class="event-date">${escapeHtml(formatDisplayDate(nextOccurrence))}</p>` : "";
   const imageMarkup = event.eventImage ? `
     <div class="event-card-image">
@@ -103,9 +126,10 @@ export function renderEventCard(event, variant = "upcoming") {
       ${imageMarkup}
       <div class="event-card-copy">
         <div class="event-card-topline">
-          ${event.featuredEvent ? `<span class="status-badge featured">Featured</span>` : ""}
-          ${event.vibe ? `<span class="vibe-tag">${escapeHtml(event.vibe)}</span>` : ""}
-        </div>
+            ${event.featuredEvent ? `<span class="status-badge featured">Featured</span>` : ""}
+            ${event.vibe ? `<span class="vibe-tag">${escapeHtml(event.vibe)}</span>` : ""}
+            ${countdownText ? `<span class="countdown-tag">${escapeHtml(countdownText)}</span>` : ""}
+          </div>
         ${vibeVideoMarkup}
         <h3>${escapeHtml(event.eventName)}</h3>
         ${dateMarkup}
