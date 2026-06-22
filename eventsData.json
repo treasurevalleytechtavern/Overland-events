@@ -1,6 +1,39 @@
 {
   "events": [
     {
+      "id": "event-1782118780422-wp9nuq",
+      "eventName": "4th of July",
+      "eventType": "Recurring Event",
+      "startDate": "2026-07-04",
+      "endDate": "2026-07-04",
+      "startTime": "21:00",
+      "endTime": "",
+      "recurrenceType": "Annually",
+      "recurrenceDays": [],
+      "shortDescription": "Spend the 4th at Overland with karaoke, cold drinks, and a whole bar full of red-white-and-blue chaos. Songs start at 9 PM, patriotic bangers are welcome, and perfect singing is absolutely not required.",
+      "vibe": "Party / Packed",
+      "highlightHook": "Red, white, blue, and probably off-key.",
+      "weeknightHook": "",
+      "weeknightCallToAction": "",
+      "weekendHook": "",
+      "weekendCallToAction": "",
+      "specialsDeals": "Daily happy hour runs 1-7 PM before karaoke starts at 9 PM.",
+      "callToAction": "Declare independence from singing on-key.",
+      "location": "Main Bar",
+      "crowdExpectation": "Busy",
+      "signupRequired": false,
+      "signupNote": "",
+      "showInWidget": true,
+      "featuredEvent": true,
+      "status": "Published",
+      "isCancelled": false,
+      "cancellationNote": "",
+      "eventImage": "https://events.overlandbar.com/assets/theme/4th-of-july.png",
+      "contentHooksNotes": ""
+    }
+  ]
+}
+    {
       "id": "event-1777016785411-nnsggb",
       "eventName": "Karaoke Every Night",
       "eventType": "Daily Anchor",
@@ -13,7 +46,7 @@
       "shortDescription": "First come, first served with fair rotations — our KJs keep things moving and make you sound your best. Drop your song off by the stage and jump into the rotation.\n\n🎶 Songbook: songs.overlandbar.com\n💸 Show your KJ some love!",
       "vibe": "Social",
       "highlightHook": "Big songs, good people, and a mic waiting for you.",
-      "weeknightHook": "I wanna sing… but I don’t wanna wait 2 hours.",
+      "weeknightHook": "I wanna sing… but I don-t wanna wait 2 hours.",
       "weeknightCallToAction": "Come get your songs in before the weekend rush",
       "weekendHook": "Big crowd, big energy, full bar",
       "weekendCallToAction": "Want more than one song? Come early",
@@ -90,7 +123,7 @@
       "status": "Published",
       "isCancelled": false,
       "cancellationNote": "",
-      "eventImage": "https://events.overlandbar.com/assets/may_the_4th.png",
+      "eventImage": "https://events.overlandbar.com/assets/may-the-4th.png",
       "contentHooksNotes": ""
     }
   ]
