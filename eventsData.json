@@ -30,9 +30,7 @@
       "cancellationNote": "",
       "eventImage": "https://events.overlandbar.com/assets/theme/4th-of-july.png",
       "contentHooksNotes": ""
-    }
-  ]
-}
+    },
     {
       "id": "event-1777016785411-nnsggb",
       "eventName": "Karaoke Every Night",
@@ -43,10 +41,10 @@
       "endTime": "01:59",
       "recurrenceType": "None (Once)",
       "recurrenceDays": [],
-      "shortDescription": "First come, first served with fair rotations — our KJs keep things moving and make you sound your best. Drop your song off by the stage and jump into the rotation.\n\n🎶 Songbook: songs.overlandbar.com\n💸 Show your KJ some love!",
+      "shortDescription": "First come, first served with fair rotations \u2014 our KJs keep things moving and make you sound your best. Drop your song off by the stage and jump into the rotation.\n\n\ud83c\udfb6 Songbook: songs.overlandbar.com\n\ud83d\udcb8 Show your KJ some love!",
       "vibe": "Social",
       "highlightHook": "Big songs, good people, and a mic waiting for you.",
-      "weeknightHook": "I wanna sing… but I don-t wanna wait 2 hours.",
+      "weeknightHook": "I wanna sing\u2026 but I don't wanna wait 2 hours.",
       "weeknightCallToAction": "Come get your songs in before the weekend rush",
       "weekendHook": "Big crowd, big energy, full bar",
       "weekendCallToAction": "Want more than one song? Come early",
@@ -74,9 +72,9 @@
       "endTime": "19:00",
       "recurrenceType": "None (Once)",
       "recurrenceDays": [],
-      "shortDescription": "Happy hour from open to early evening — ease into the night with cold drinks, good company, and a smooth lead-in to karaoke.",
+      "shortDescription": "Happy hour from open to early evening \u2014 ease into the night with cold drinks, good company, and a smooth lead-in to karaoke.",
       "vibe": "",
-      "highlightHook": "Six hours of happy hour — no rush, just show up.",
+      "highlightHook": "Six hours of happy hour \u2014 no rush, just show up.",
       "weeknightHook": "",
       "weeknightCallToAction": "",
       "weekendHook": "",
@@ -107,7 +105,7 @@
       "recurrenceDays": [],
       "shortDescription": "Celebrate May the 4th with a Star Wars-inspired karaoke night at Overland Bar. Sing space songs, Dark Side bangers, rebel anthems, cantina classics, and whatever gets the room singing.",
       "vibe": "",
-      "highlightHook": "A galaxy-far-far-away karaoke night for Jedi, Sith, rebels, smugglers, and neighborhood bar gremlins.",
+      "highlightHook": "A galaxy-far-far-away karaoke night for Jedi, Sith, rebels, smugglers, and neighborhood bar regulars.",
       "weeknightHook": "",
       "weeknightCallToAction": "",
       "weekendHook": "",
